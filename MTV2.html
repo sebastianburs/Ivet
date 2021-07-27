@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="icone/logo.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IVET|MTV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="bg"></div>
+    <header>
+      <a href="https://www.ivetsrl.com/" class="logo" target="_blank"><img src="icone/logo.png" class="logoImg"></a>
+     <!--  <div class="toggle"></div> -->
+      <ul class="navigation">
+     <!--    <li><a href="#" class="active">Home</a></li> -->
+     <!--    <li><a href="#">Menu</a></li>
+        <li><a href="#">What's New</a></li>
+        <li><a href="#">Contact</a></li> -->
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>MTV 3000</h2>
+        <p>
+          <ul>
+            <p class="titolo">Full components onto single base:</p>
+            <li class="elenco1">Scanning capability (Z) 3200 mm</li>
+            <li class="elenco1">Max. scanning speed (Z) 500 mm/d</li>
+            <li class="elenco1">Scanning capability (Y) 250 mm</li>
+            <li class="elenco1">Max scanning capability (Y) 250 mm/s</li>
+            <li class="elenco1">Process traveability integrate</li>
+            <li class="elenco1">Industry 4.0 ready</li>
+          </ul>
+        </p>
+        
+        <a href="https://www.ivetsrl.com/" target="_blank">Visit our Web Site</a>
+      </div>
+      <div class="imgBox">
+        <img src="macchine/mtv_3000.png" class="fruits">
+      </div>
+    </div>
+    <!-- Selettore immagini in basso -->
+    <ul class="thumb">
+      <li data-text="MTV - SERIES"><a href="file:///C:/Users/giovanna.bellame/Desktop/Ivet%20prova/MTV1.html"><img src="macchine/mtv_350_1ac_2p.png" onclick="imgSlider('macchine/mtv_350_1ac_2p.png');changeBgColor('#EF7900')"></a></li>
+      <li data-text="MTV - SERIES" class="active"><a href="file:///C:/Users/giovanna.bellame/Desktop/Ivet%20prova/MTV2.html"><img src="macchine/mtv_3000.png" onclick="imgSlider('macchine/mtv_3000.pn');changeBgColor('#ffcc02')"></a></li>
+      <li data-text="MTV - SERIES"><img src="macchine/mtv_1000.png" onclick="imgSlider('macchine/mtv_1000.png');changeBgColor('#92ba3c')"></li>
+      <li data-text="MTV - SERIES Fruits"><img src="dragonFruits.png" onclick="imgSlider('dragonFruits.png');changeBgColor('#fb6cb2')"></li>
+      <li data-text="MTV - SERIES"><img src="pineApple.png" onclick="imgSlider('pineApple.png');changeBgColor('#ffb42b')"></li>
+    </ul>
+    <ul class="sci">
+      <li><a href="https://www.facebook.com/Ivet-srl-107333408248198" target="_blank"><img src="icone/facebook.png"></a></li>
+      <li><a href="https://www.youtube.com/channel/UCpgChuACO-Ra8OB8fB8Ce_w" target="_blank"><img src="icone/youtube.png"></a></li>
+      <li><a href="https://wa.me/message/D5SQJIA5TUJKL1?src=qr" target="_blank"><img src="icone/whatsapp.png"></a></li>
+      <li><a href="https://www.instagram.com/ivet_srl/" target="_blank"><img src="icone/instagram.png"></a></li>
+    </ul>
+  </section>
+
+  <script>
+/*
+    let menuToggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    menuToggle.onclick = function(){
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+*/
+    // change image on click
+    function imgSlider(anything){
+      document.querySelector('.fruits').src = anything;
+    }
+
+    // change background color
+    function changeBgColor(color){
+      const bg = document.querySelector('.bg');
+      bg.style.background = color;
+    }
+
+    // add active class in selected thmbnails
+    let el = document.querySelectorAll('.thumb li');
+    for (let i = 0; i < el.length; i++){
+      el[i].onclick = function(){
+        var c = 0;
+        while (c < el.length){
+          el[c++].className = 'check';
+        }
+        el[i].className = 'check active';
+      }
+    }
+
+  </script>
+</body>
+</html>
