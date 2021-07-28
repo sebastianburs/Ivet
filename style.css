@@ -1,0 +1,373 @@
+/*
+Pantoni ivet
+Grigio: rgb - 80 82 80 hex - #505250
+Arancione:  rgb - 239 121 0 hex - #EF7900;
+Grigio bello rgb - 87 87 86  hex -  #575756
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+section
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+.bg
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #EF7900;
+  transition: 0.5s;
+}
+/*velo scuro sx*/
+.bg::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: rgba(87,87,86,0.1);
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo
+{
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+}
+header .logoImg
+{
+  position: absolute;
+}
+header .navigation
+{
+  position: relative;
+  display: flex;
+}
+header .navigation li
+{
+  list-style: none;
+}
+header .navigation li a 
+{
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  margin-left: 10px;
+  padding: 8px 15px;
+  border-radius: 40px;
+  text-decoration: none;
+}
+header .navigation li a.active,
+header .navigation li a:hover
+{
+  background: #fff;
+  color: #333;
+}
+.content
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+/*aggiunte da me*/
+
+.elenco1
+{
+  
+  color: white;
+  
+}
+.elenco2
+{
+  color: white;
+  list-style-image: url('icone/spunta.png');
+}
+
+
+/*------------------------*/
+.content .textBox
+{
+  position: relative;
+  max-width: 600px;
+}
+.content .textBox h2
+{
+  color: #fff;
+  font-size: 3em;
+  line-height: 1.2em;
+  font-weight: 700;
+  margin-top: 60px;
+}
+.content .textBox p
+{
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.7em;
+}
+.content .textBox a
+{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.content .imgBox
+{
+  position: relative;
+  z-index: 1;
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+/*dimensione immagine macchina*/
+.content .imgBox img
+{
+  max-width: 600px;
+  margin-top: -150px;
+}
+.thumb
+{
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+.thumb li
+{
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  height: 70px;
+  background: rgba(255,255,255,0.1);
+  padding: 5px;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.thumb li.active
+{
+  border: 2px solid rgba(255,255,255,1);
+}
+/*Parte colorata testo*/
+.thumb li::before
+{
+  position: absolute;
+  top: -200px;
+  left: -300px;
+  content: attr(data-text);
+  white-space: nowrap;
+  font-size: 8em;
+  color: rgba(255,255,255,0.2);
+  opacity: 0;
+  font-weight: 500;
+  pointer-events: none;
+}
+.thumb li.active::before
+{
+  opacity: 1;
+}
+.thumb li img
+{
+  max-width: 100%;
+  max-height:  100%;
+}
+.sci
+{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.1);
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+.sci li
+{
+  list-style: none;
+}
+.sci li a
+{
+  display: inline-block;
+  margin: 5px 0;
+  transform: scale(0.6);
+  filter: invert(1);
+}
+
+/* now, make it responsive */
+@media (max-width: 991px)
+{
+  .bg::before
+  {
+    display: none;
+  }
+  header
+  {
+    padding: 20px;
+  }
+  .logoImg
+  {
+    transform: scale(0.7);
+    padding: 10px;
+    left: -50px;
+    top: -40px;
+  }
+  .elenco1
+{
+  margin-left: 25px;
+}
+.elenco2
+{
+  margin-left: 25px;
+}
+  section
+  {
+    padding: 20px;
+    padding-bottom: 120px;
+  }
+  .content
+  {
+    margin-top: 100px;
+    flex-direction: column;
+  }
+  .content .textBox
+  {
+    max-width: 100%;
+  }
+  .content .textBox .titolo
+  {
+    max-width: 100%;
+    font-size: 1.5em;
+
+  }
+  .content .textBox h2
+  {
+    font-size: 2.1em;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  .content .imgBox
+  {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .content .imgBox img
+  {
+    margin-left: -6px;
+    margin-top: 40px;
+    max-width: 300px;
+
+  }
+
+
+  .thumb li
+  {
+    margin: 0 3px;
+    height: 55px;
+  }
+  .thumb li img
+  {
+    max-width: 40px;
+  }
+  .thumb li::before
+  {
+    position: absolute;
+    top: -60px;
+    left: 2px;
+    font-size: 2.9em;
+  }
+  .sci
+  {
+    background: rgba(0,0,0,0.1);
+    right: 0;
+    width: 50px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  header .navigation
+  {
+    display: none;
+  }
+  header .navigation.active
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fc4a55;
+    z-index: 10;
+  }
+  header .navigation li a
+  {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  .toggle
+  {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 10000;
+  }
+  .toggle.active
+  {
+    position: fixed;
+    right: 20px;
+    background: url(close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
